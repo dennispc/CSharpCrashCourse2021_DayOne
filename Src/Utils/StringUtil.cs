@@ -11,37 +11,47 @@ namespace CrashCourse2021ExercisesDayOne.Utils
                 throw new NullReferenceException(Constants.StringCannotBeNull);
             }
 
-            throw new NotImplementedException();
+            return stringToMeasure.Length;
         }
 
         internal string SumStrings(string value1, string value2)
         {
-            throw new NotImplementedException();
+            return ((int.Parse(value1) + int.Parse(value2)).ToString());
         }
 
         internal string DivideString(string value1, string value2)
         {
-            throw new NotImplementedException();
+            return (int.Parse(value1) / int.Parse(value2)).ToString();
         }
 
         internal string StringContains(string value1, string value2)
         {
-            throw new NotImplementedException();
+            return String.Format(value1.Contains(value2)?"YES":"NO");
         }
 
         internal string StringToUpperCase(string value1)
         {
-            throw new NotImplementedException();
+            return value1.ToUpper();
         }
 
         internal string AdditionFromPlusString(string inputString)
         {
-            throw new NotImplementedException();
+            string[] strings = inputString.Split("+");
+            int[] ints = new int[strings.Length];
+            for(int i = 0 ; i < strings.Length ; i++){
+                ints[i] = int.Parse(strings[i]);
+            }
+            int total = 0;
+            for (int i = 0 ; i < ints.Length ; i++){
+                total+=ints[i];
+            }
+            return total.ToString();
+
         }
 
         internal string EvenNumber(int numbertoTest)
         {
-            throw new NotImplementedException();
+            return string.Format(numbertoTest%2==0?"EVEN":"ODD");
         }
     }
 }
